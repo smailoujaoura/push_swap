@@ -83,5 +83,8 @@ void	check_op(char *op, t_stack *a, t_stack *b, t_ops *ops)
 	else if (ft_strcmp(op, "rrr\n") == 0)
 		return ;
 	else
+	{
+		free(op);
 		exit_cleanly(a, b, ops);
+	}
 }

@@ -97,7 +97,7 @@ static void	apply_ops(t_ops *ops, t_stack **a, t_stack **b)
 		ops = ops->next;
 	}
 }
-
+#include <stdio.h>
 int	main(int argc, char *argv[])
 {
 	char	*line;

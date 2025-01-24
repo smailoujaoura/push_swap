@@ -26,10 +26,10 @@ OBJSB = $(SRCSB:.c=.o)
 LIBFT = ./libft/libft.a
 
 $(NAME): $(LIBFT) $(OBJS)
-	$(CC) $(CFLAGS) $^ -o $(NAME)
+	$(CC) $(CFLAGS) $(OBJS) -L./libft -lft -o $(NAME)
 
 $(CHECKER): $(LIBFT) $(OBJSB)
-	$(CC) $(CFLAGS) $^ -o $(CHECKER)
+	$(CC) $(CFLAGS) $(OBJSB) -L./libft -lft -o $(CHECKER)
 
 $(LIBFT): ./libft/libft.h
 	make -C ./libft
@@ -48,7 +48,7 @@ clean:
 	make -C ./libft clean
 	rm -rf $(OBJS)
 	rm -rf $(OBJSB)
-
+ 
 fclean: clean
 	make -C ./libft fclean
 	rm -rf $(NAME)
